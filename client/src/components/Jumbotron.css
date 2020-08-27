@@ -1,0 +1,11 @@
+hr {
+    width: 500px;
+    border: 2px solid white;
+    opacity: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    hr {
+        width: 85vw
+    }
+}
