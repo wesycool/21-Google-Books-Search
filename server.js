@@ -6,7 +6,7 @@ const mongoose = require( 'mongoose' );
 
 const PORT = process.env.PORT || 8080
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebook" , 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks" , 
     {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
  // for serving all the normal html
