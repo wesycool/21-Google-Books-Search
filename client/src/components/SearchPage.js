@@ -6,10 +6,11 @@ function SearchPage() {
     const [bookList, setBookList] = useState([])
     const querySearch = useRef()
 
-    const searchBtn = async () => {
-        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${querySearch.current.value}&projection=lite&key=AIzaSyB5FGB7KkzjQ9qmS_kEy4o3R0yrTDYLGS8`)
-        .then( ({data:{items}}) => {
-            const getInfo = items.map( ({volumeInfo}) => {return volumeInfo})
+    const searchBtn = () => {
+        axios.get(`./api/googlebooks/${querySearch.current.value}`)
+        .then( ({data}) => {
+            console.log(data)
+            const getInfo = data.map( ({volumeInfo}) => {return volumeInfo})
             setBookList(getInfo)
         })
     }

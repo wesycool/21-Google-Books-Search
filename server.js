@@ -10,7 +10,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks" ,
     {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
  // for serving all the normal html
-app.use( express.static('client/build') )
+app.use(express.static('client/build') )
 // for parsing incoming POST data
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
