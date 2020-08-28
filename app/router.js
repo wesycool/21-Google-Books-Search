@@ -7,6 +7,10 @@ function router( app ){
         res.send(await orm.getBook())
     }),
 
+    app.get('/api/books/:id', async (req,res) => {
+        res.send(await orm.getBookId(req.params.id))
+    }),
+
     app.post('/api/books', async (req,res) =>{
         await orm.postBook(req.body.data)
         res.send('success')
@@ -18,8 +22,8 @@ function router( app ){
     })
 
     app.get('/api/googlebooks/:value', async (req,res) => {
-        const getList = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.value}&projection=lite&key=${process.env.GOOGLE_API}`)
-        res.send(getList.data.items)
+        const {data} = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.value}&projection=lite&key=${process.env.GOOGLE_API}`)
+        res.send(data.items)
     })
 }
 

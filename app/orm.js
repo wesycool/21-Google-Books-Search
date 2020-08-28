@@ -7,6 +7,7 @@ const db = require( './models' );
 
 const orm = {
     getBook: async () => { return await db.Book.find({}) },
+    getBookId: async (id) => { return await db.Book.findOne({bookId: id}) },
     postBook: async (body) => { return await db.Book.create(body) },
     deleteBook: async (id) => { return await db.Book.deleteOne({_id: mongoose.Types.ObjectId(id)}) }
 }
