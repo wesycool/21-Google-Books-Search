@@ -12,14 +12,16 @@ function App() {
         <NavBar />
         <div className='container-fluid' style={{marginTop:'15px'}}>
           <Jumbotron />
-          <Route exact path={"/"} component={SavedPage}/>
-          <Route exact path="/search" component={SearchPage}/>
+          <div className='container'>
+            <Route exact path={"/"} component={SearchPage}/>
+            <Route exact path="/saved" component={SavedPage}/>
+          </div>
         </div>
 
       </div>
     </Router>
 
-  );
+  )
 }
 
 export default App;

@@ -15,8 +15,9 @@ function NavBar() {
 
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <div className="navbar-nav">
-                        <Link to="/" className={pathname === '/'? "nav-link active" : "nav-link"}>Saved</Link>
-                        <Link to="/search" className={pathname === '/search'? "nav-link active" : "nav-link"}>Searched</Link>
+
+                        <Link to="/" className={pathname === '/'? "nav-link active" : "nav-link"}>Search</Link>
+                        <Link to="/saved" className={pathname === '/saved'? "nav-link active" : "nav-link"}>Saved</Link>
                     </div>
                 </div>
 
