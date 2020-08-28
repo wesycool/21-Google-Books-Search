@@ -9,12 +9,10 @@ function SearchPage() {
     const searchBtn = () => {
         axios.get(`./api/googlebooks/${querySearch.current.value}`)
         .then( ({data}) => {
-            console.log(data)
-            const getInfo = data.map( ({volumeInfo}) => {return volumeInfo})
+            const getInfo = data.map( ({id, volumeInfo}) => {return {bookId: id, ...volumeInfo}})
             setBookList(getInfo)
         })
     }
-
 
     return(
         <div>
